@@ -1,0 +1,38 @@
+\chapter{Laboratorio}
+  Para la realizacion de la actividad practica de laboratorio, se requieren los siguientes materiales/elementos:
+  \begin{itemize}
+    \item Generador de onda cuadrada ($f = 100KHz$, $V = 3Vpp$),
+    \item Osciloscopio de doble trazo,
+    \item Multimetro,
+    \item Cable coazial $50 \Omega$,
+    \item Kit de medicion de adaptacion en lineas de transmision.
+  \end{itemize}
+
+  Todos los elementos son provistos por el laboratorio de comunicaciones de la UTN FRC.
+
+  El circuito propuesto se puede ver en la figura \ref{fig:crkt}
+
+  \begin{figure}[!ht]
+    \centering
+    \input{tikz/diagr.tex}
+    \caption{circuito a implementar.}
+    \label{fig:crkt}
+  \end{figure}
+  
+  \section{Actividades}
+    En base al circuito propuesto, ubicamos con la llave selectora de impedancia del kit, una resistencia de carga
+    $Z_L = 75 \Omega$ en el punto \textbf{B}. Observando las formas de onda en los puntos \textbf{A} y \textbf{B},
+    considerando que la linea de transmision esta adaptada, obtuvimos:
+    \begin{gather*}
+      \text{Time/Div:} *s \\
+      \text{\textbf{CH1:}} *\sfrac{V}{div} \quad V_{pp} = *v \\
+      \text{\textbf{CH2:}} *\sfrac{V}{div} \quad V_{pp} = *v
+    \end{gather*}
+
+    En la figura \ref{fig:sig_plot1} puede observar las señales capturadas del osciloscopio.
+    \begin{figure}[!ht]
+      \centering
+      %señales
+      \caption{señales capturadas en el osciloscopio con la linea adaptada.}
+      \label{fig:sig_plot1}
+    \end{figure}
