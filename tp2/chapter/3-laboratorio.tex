@@ -1,9 +1,68 @@
 \chapter{Laboratorio}
-  Para la realizacion de la actividad practica de laboratorio, se requieren los siguientes materiales/elementos:
+  Para la realización de la actividad practica de laboratorio, se requieren los siguientes materiales/elementos:
   \begin{itemize}
     \item Radio transmisor UHF Alinco DR 430,
     \item Vatimetro de RF Bird modelo 43,
-    \item Base magnetica para antena,
-    \item Irradiantes para la base magnetica: $31.7cm$, $17cm$, $16cm$ y $13.5cm$,
-    \item Fuente de alimentacion $12V$.
+    \item Base magnética para antena,
+    \item Irradiantes para la base magnética: $31.7cm$, $17cm$, $16cm$ y $13.5cm$,
+    \item Fuente de alimentación $12V$.
   \end{itemize}
+
+  \section{Actividades}
+    \begin{enumerate}
+      \item Verificar los datos del transmisor y vatímetro a fin de evitar daños a los instrumentos. Verificar estado de fuentes de alimentación del transmisor.
+      \item Seleccionar el acoplador para una potencia de 10 W y una frecuencia de 200 a 500 MHz.
+      \item Se posee 4 irradiantes (31.70 cm, 17 cm, 16 cm y 13,5 cm) colocar uno de los irradiantes en la base magnética.
+      \item No encender los transmisores antes de hacer las conexiones de los elementos.
+      \item Conectar mediante cable coaxial el vatímetro entre el transmisor y la antena.
+      \item Ajustar la frecuencia de transmisor a: 450 MHz.
+      \item Configurar el medidor para medición de potencia incidente como lo indica figura \ref{fig:power_meas.forward}.
+        \begin{figure}[!ht]
+          \centering
+          \input{tikz/f_p_meas.tikz}
+          \caption{disposición para medición de potencia incidente.}
+          \label{fig:power_meas.forward}
+        \end{figure}
+      \item Encender el medidor y el transmisor. Pulsar el botón de transmisión y verificar que el sistema está transmitiendo.
+      \item Realizar la medición pulsando momentáneamente el botón de transmisión.
+        \begin{equation*}
+          P_i = *W
+        \end{equation*}
+      \item Apagar el transmisor y configurar el vatímetro para medición de onda reflejada como lo indica figura
+        \ref{fig:power_meas.reverse}.
+        \begin{figure}[!ht]
+          \centering
+          \input{tikz/r_p_meas.tikz}
+          \caption{disposición para medición de potencia reflejada.}
+          \label{fig:power_meas.reverse}
+        \end{figure}
+      \item Encender el transmisor y realizar la medición pulsando momentáneamente el botón de transmisión.
+        \begin{equation*}
+          P_r = *W
+        \end{equation*}
+      \item Calcular el valor del ROE para cada uno de los irradiantes (31.70 cm, 17 cm, 16 cm y 13,5 cm.) por medio de
+        su ecuación.
+
+        Se define como relación de onda estacionaria a:
+        \begin{equation}
+          ROE = \frac{E_{MAX}}{E_{min}} = \frac{1 + \left| \Gamma \right|}{1 - \left| \Gamma \right|}
+          \label{eq:roe}
+        \end{equation}
+
+        sabiendo que:
+        \begin{equation}
+          \Gamma = \sqrt{\frac{P_r}{P_i}}
+          \label{eq:c_refl}
+        \end{equation}
+
+        reemplazando \ref{eq:c_refl} en \ref{eq:roe} nos queda:
+        \begin{equation}
+          ROE = \frac{\sqrt{P_i} + \sqrt{P_r}}{\sqrt{P_i} - \sqrt{P_r}}
+        \end{equation}
+
+        reemplazando los valores obtenidos, nos queda:
+        \begin{equation*}
+          ROE = *
+        \end{equation*}
+      \item Determinar cual de los irradiantes posee un menor ROE
+    \end{enumerate}
