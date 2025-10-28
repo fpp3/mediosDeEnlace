@@ -1,0 +1,82 @@
+\chapter{Ejercicio Teórico}
+  Adaptar con un ramal sintonizador ''Stub'', una linea de transmisión cuya impedancia característica es $Z_O$ y la
+  impedancia de carga $Z_L$.
+  \begin{figure}[!ht]
+    \centering
+    \begin{minipage}{0.6\textwidth}
+      \centering
+      \input{tikz/linea_1_stub.tikz}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+      Datos:
+      \begin{gather*}
+        Z_O = 50 \Omega \quad  F_G = 410MHz \\
+        Z_L = 24.8 + 7.4 j \quad V_p = 0.66 c
+      \end{gather*}
+      Obtener:
+      \begin{gather*}
+        \Gamma \quad ROE \\
+        \lambda_{d_1} \quad d_1 \\
+        \lambda_{st} \quad L_{st}
+      \end{gather*}
+    \end{minipage}
+  \end{figure}
+
+  \begin{figure}[!ht]
+    \centering
+    \begin{minipage}[t]{0.3\textwidth}
+      \begin{align*}
+        \lambda_G &= \frac{V_p}{F_G} \\[6pt]
+        \lambda_G &= \frac{0.66 \cdot 3 \times 10^8 \sfrac{m}{s}}{410 \times 10^6} \\[6pt]
+        \Aboxed{\lambda_G &= 0.482m}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+      \begin{align*}
+        \Gamma &= \frac{Z_L - Z_O}{Z_L + Z_O} \\[6pt]
+        \Gamma &= \frac{24.8 + 7.4 j - 50}{24.8 + 7.4 j + 50} \\[6pt]
+        \Gamma &= -0.32 + 0.13j \\[6pt]
+        \Aboxed{\Gamma &= 0.34 \phase{157.9^\circ}}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+      \begin{align*}
+        ROE &= \frac{1 + \left| \Gamma \right|}{1 - \left| \Gamma \right|} \\[6pt]
+        ROE &= \frac{1 + 0.34}{1 - 0.34} \\[6pt]
+        \Aboxed{ROE &= 2.03}
+      \end{align*}
+    \end{minipage}
+  \end{figure}
+
+  \begin{figure}[!ht]
+    \centering
+    \begin{minipage}[t]{0.3\textwidth}
+      \begin{align*}
+        z_n &= \frac{Z_L}{Z_O} \\[6pt]
+        z_n &= \frac{24.8 + 7.4j}{50} \\[6pt]
+        \Aboxed{z_n &= 0.496 + 0.148j}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+      \begin{align*}
+        \lambda_{d_1} &= 0.5 - (\lambda_1 - \lambda_2) \\[6pt]
+        \lambda_{d_1} &= 0.5 - (0.282 - 0.154) \\[6pt]
+        \Aboxed{\lambda_{d_1} &= 0.372 \lambda} \\
+        \Aboxed{d_1 &= 0.179m}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.3\textwidth}
+      \begin{align*}
+        L_{st} &= \lambda_{st} * \lambda_G \\[6pt]
+        L_{st} &= 0.398 * 0.482 \\[6pt]
+        \Aboxed{L_{st} &= 0.191m}
+      \end{align*}
+    \end{minipage}
+  \end{figure}
+
+  \includepdf[pages=-]{annex/abaco.pdf}
