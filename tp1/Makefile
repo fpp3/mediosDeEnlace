@@ -1,2 +1,2 @@
 all:
-	latexmk -pdf -lualatex tp1.tex
+	latexmk -pdf tp1.tex

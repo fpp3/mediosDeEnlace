@@ -1,11 +1,11 @@
 \chapter{Laboratorio}
-  Para la realizacion de la actividad practica de laboratorio, se requieren los siguientes materiales/elementos:
+  Para la realización de la actividad practica de laboratorio, se requieren los siguientes materiales/elementos:
   \begin{itemize}
     \item Generador de onda cuadrada ($f = 100KHz$, $V = 3Vpp$),
     \item Osciloscopio de doble trazo,
     \item Multimetro,
-    \item Cable coazial $50 \Omega$,
-    \item Kit de medicion de adaptacion en lineas de transmision.
+    \item Cable coaxial $50 \Omega$,
+    \item Kit de medición de adaptación en lineas de transmisión.
   \end{itemize}
 
   Todos los elementos son provistos por el laboratorio de comunicaciones de la UTN FRC.
@@ -20,19 +20,96 @@
   \end{figure}
   
   \section{Actividades}
-    En base al circuito propuesto, ubicamos con la llave selectora de impedancia del kit, una resistencia de carga
-    $Z_L = 75 \Omega$ en el punto \textbf{B}. Observando las formas de onda en los puntos \textbf{A} y \textbf{B},
-    considerando que la linea de transmision esta adaptada, obtuvimos:
-    \begin{gather*}
-      \text{Time/Div:} *s \\
-      \text{\textbf{CH1:}} *\sfrac{V}{div} \quad V_{pp} = *v \\
-      \text{\textbf{CH2:}} *\sfrac{V}{div} \quad V_{pp} = *v
-    \end{gather*}
-
-    En la figura \ref{fig:sig_plot1} puede observar las señales capturadas del osciloscopio.
-    \begin{figure}[!ht]
-      \centering
-      %señales
-      \caption{señales capturadas en el osciloscopio con la linea adaptada.}
-      \label{fig:sig_plot1}
-    \end{figure}
+    \begin{enumerate}
+      \item En base al circuito propuesto, ubicar con la llave selectora de impedancia del kit, una resistencia de carga
+        $Z_L = 75 \ \Omega$ en el punto B. Observar las formas de onda en los puntos A y B (la línea de transmisión está
+        adaptada: $Z_L = Z_O = 75 \ \Omega$).
+        \begin{gather*}
+          \text{Time/Div:} *s \\
+          \text{\textbf{CH1:}} *\sfrac{V}{div} \quad V_{pp} = *v \\
+          \text{\textbf{CH2:}} *\sfrac{V}{div} \quad V_{pp} = *v
+        \end{gather*}
+      \item Graficar la forma de onda de los canales Ch1 y Ch2.
+        \begin{figure}[!ht]
+          \centering
+          %señales
+          \caption{señales capturadas en el osciloscopio con la linea adaptada.}
+          \label{fig:sig_plot1}
+        \end{figure}
+      \item Interpretar lo obtenido.
+      \item En el terminal B de la línea de transmisión, ubicar con la llave selectora de impedancia del kit, el
+        potenciómetro ($Z_L$ = variable). Variar el potenciómetro desde cero al máximo. Encontrar la posición en que
+        desaparecen las distorsiones, observando la señal a la salida del generador y en la carga.
+        \begin{figure}[!ht]
+          \centering
+          %señales
+          \caption{señal capturada sin distorsión para un $Z_L = *$.}
+          \label{fig:sig_plot2}
+        \end{figure}
+        Mantener la posición obtenida por el potenciómetro. Cambiar el selector a la posición carga $Z_L = 75 \ \Omega$.
+        Medir el valor de la resistencia $R_{POT}$ del potenciómetro con un óhmetro.
+        \begin{equation*}
+          R_{POT} = *\Omega
+        \end{equation*}
+      \item Interpretar cualitativamente lo obtenido.
+      \item Con la línea adaptada ($Z_L = Z_O = 75 \ \Omega$), medir el tiempo de retardo ($T_r$) entre los puntos A y B.
+        \begin{figure}[!ht]
+          \centering
+          %señales
+          \caption{señal capturada midiendo el tiempo de retardo de propagación. Escala en $\sfrac{s}{div}$.}
+          \label{fig:sig_plot3}
+        \end{figure}
+        \begin{equation*}
+          T_r = *s
+        \end{equation*}
+      \item Con la línea adaptada ($Z_L = Z_O = 75 \ \Omega$), calcular la atenuación de la línea de transmisión
+        ($A_{tt}$) entre los puntos A y B, medida en decibles (dB).
+        \begin{figure}[!ht]
+          \centering
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \begin{align*}
+              E_A = *V_{pp} \\
+              E_B = *V_{pp}
+            \end{align*}
+          \end{minipage}
+          \hfill
+          \begin{minipage}{0.45\textwidth}
+            \centering
+            \begin{equation*}
+              A_{tt} = 20 \log \left( \frac{E_B}{E_A} \right) = *dB
+            \end{equation*}
+          \end{minipage}
+        \end{figure}
+      \item Calcular el factor de propagación ($F_p$) de la línea de transmisión por intermedio de la velocidad de
+        propagación $V_p$.
+        \begin{gather*}
+          V_p = \frac{L_{lt}}{T_r} = * \sfrac{m}{s} \\
+          F_p = \frac{V_p}{c} = *
+        \end{gather*}
+        Conocido el valor del factor de propagación Fp, es posible calcular el valor de la permitividad relativa
+        \text{$\epsilon_r$} del cable coaxial
+        \begin{equation*}
+          \epsilon_r = \frac{1}{F_p^2} = * 
+        \end{equation*}
+      \item En el punto B de la línea de transmisión, ubicar la llave selectora de impedancia del kit en circuito
+        abierto $Z_L = \infty$. Observar las formas de onda en los puntos A y B.
+      \item Graficar la forma de onda de los canales Ch1 y Ch2.
+        \begin{figure}[!ht]
+          \centering
+          %señales
+          \caption{señales capturadas por el osciloscopio.}
+          \label{fig:sig_plot4}
+        \end{figure}
+      \item Interpretar lo obtenido.
+      \item En el punto B de la línea de transmisión, ubicar la llave selectora de impedancia del kit en cortocircuito
+        (ZL = 0).  Observar las formas de onda en los puntos A y B.
+      \item Graficar la forma de onda de los canales Ch1 y Ch2.
+        \begin{figure}[!ht]
+          \centering
+          %señales
+          \caption{señales capturadas por el osciloscopio.}
+          \label{fig:sig_plot5}
+        \end{figure}
+      \item Interpretar lo obtenido.
+    \end{enumerate}
