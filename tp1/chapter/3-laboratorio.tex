@@ -25,9 +25,9 @@
         $Z_L = 75 \ \Omega$ en el punto B. Observar las formas de onda en los puntos A y B (la línea de transmisión está
         adaptada: $Z_L = Z_O = 75 \ \Omega$).
         \begin{gather*}
-          \text{Time/Div:} *s \\
-          \text{\textbf{CH1:}} *\sfrac{V}{div} \quad V_{pp} = *v \\
-          \text{\textbf{CH2:}} *\sfrac{V}{div} \quad V_{pp} = *v
+          \text{Time/Div: } 2 \mu s \\
+          \text{\textbf{CH1: }} 1\sfrac{V}{div} \quad V_{pp} = 2v \\
+          \text{\textbf{CH2: }} 1\sfrac{V}{div} \quad V_{pp} = 2v
         \end{gather*}
       \item Graficar la forma de onda de los canales Ch1 y Ch2.
         \begin{figure}[!ht]
@@ -49,7 +49,7 @@
         Mantener la posición obtenida por el potenciómetro. Cambiar el selector a la posición carga $Z_L = 75 \ \Omega$.
         Medir el valor de la resistencia $R_{POT}$ del potenciómetro con un óhmetro.
         \begin{equation*}
-          R_{POT} = *\Omega
+          R_{POT} = 72\Omega
         \end{equation*}
       \item Interpretar cualitativamente lo obtenido.
       \item Con la línea adaptada ($Z_L = Z_O = 75 \ \Omega$), medir el tiempo de retardo ($T_r$) entre los puntos A y B.
@@ -60,7 +60,7 @@
           \label{fig:sig_plot3}
         \end{figure}
         \begin{equation*}
-          T_r = *s
+          T_r = 350ns
         \end{equation*}
       \item Con la línea adaptada ($Z_L = Z_O = 75 \ \Omega$), calcular la atenuación de la línea de transmisión
         ($A_{tt}$) entre los puntos A y B, medida en decibles (dB).
@@ -69,28 +69,28 @@
           \begin{minipage}{0.45\textwidth}
             \centering
             \begin{align*}
-              E_A = *V_{pp} \\
-              E_B = *V_{pp}
+              E_A = 2V_{pp} \\
+              E_B = 2V_{pp}
             \end{align*}
           \end{minipage}
           \hfill
           \begin{minipage}{0.45\textwidth}
             \centering
             \begin{equation*}
-              A_{tt} = 20 \log \left( \frac{E_B}{E_A} \right) = *dB
+              A_{tt} = 20 \log \left( \frac{E_B}{E_A} \right) = 0dB
             \end{equation*}
           \end{minipage}
         \end{figure}
       \item Calcular el factor de propagación ($F_p$) de la línea de transmisión por intermedio de la velocidad de
         propagación $V_p$.
         \begin{gather*}
-          V_p = \frac{L_{lt}}{T_r} = * \sfrac{m}{s} \\
-          F_p = \frac{V_p}{c} = *
+          V_p = \frac{L_{lt}}{T_r} = \frac{5.33m}{350ns} = 15.23 \times 10^6 \sfrac{m}{s} \\
+          F_p = \frac{V_p}{c} = 0.05
         \end{gather*}
         Conocido el valor del factor de propagación Fp, es posible calcular el valor de la permitividad relativa
         \text{$\epsilon_r$} del cable coaxial
         \begin{equation*}
-          \epsilon_r = \frac{1}{F_p^2} = * 
+          \epsilon_r = \frac{1}{F_p^2} = 388.1
         \end{equation*}
       \item En el punto B de la línea de transmisión, ubicar la llave selectora de impedancia del kit en circuito
         abierto $Z_L = \infty$. Observar las formas de onda en los puntos A y B.
