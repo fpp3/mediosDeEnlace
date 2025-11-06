@@ -1,1 +1,85 @@
 \chapter{Marco Teorico}
+
+El análisis de la propagación de una \textbf{señal escalón de tensión} en una línea de transmisión se estudia bajo el
+contexto del \textbf{régimen transitorio}. A diferencia de la Teoría de Circuitos convencional (basada en constantes
+concentradas), la \textbf{Teoría de Líneas de Transmisión} se aplica cuando la longitud de la línea ($\ell$) es
+considerable o comparable a una fracción de la longitud de onda ($\lambda$), típicamente $\lambda/4$. En este dominio,
+el voltaje aplicado no alcanza la carga instantáneamente, sino que viaja a una velocidad finita, propagándose a través
+de los conductores guiado por los campos eléctricos y magnéticos.
+
+El comportamiento de la tensión y la corriente a lo largo de una línea de transmisión en régimen estacionario se
+describe mediante la \textbf{constante de propagación} $\gamma$: 
+
+\begin{equation}
+  \gamma = \sqrt{(R+j\omega L)(G+j\omega C)} = \alpha + j\beta
+\end{equation}
+
+donde $\alpha$ es la \textbf{constante de atenuación} (parte real) y $\beta$ es la
+\textbf{constante de fase} (parte imaginaria).
+
+\section{Efectos de la Impedancia de Carga y Reflexión}
+
+\subsection{Respuesta a un Escalón y Análisis de Distorsión}
+
+Cuando una fuente de tensión continua (simulando una señal escalón) se aplica a la línea, se genera una onda incidente
+($e^+$) que viaja hacia el extremo receptor. El comportamiento de esta onda en el extremo de la carga depende
+críticamente de la relación entre la \textbf{Impedancia de Carga ($Z_L$)} y la \textbf{Impedancia Característica
+($Z_0$)} de la línea.
+
+El régimen transitorio se caracteriza por las \textbf{reflexiones sucesivas} que ocurren en los extremos del generador y
+el receptor. Estas reflexiones causan la \textbf{distorsión} en la forma de onda observada en la carga.
+
+\subsection{Adaptación de Impedancias y Determinación de $Z_0$}
+
+La reflexión ocurre cuando la línea está terminada en una impedancia $Z_L$ distinta a su impedancia característica
+$Z_0$. El grado de reflexión se cuantifica mediante el \textbf{Coeficiente de Reflexión en la Carga ( $\Gamma_R$)}. Para
+el voltaje, este coeficiente es:
+
+\begin{equation}
+  \Gamma_R = \frac{Z_R - Z_0}{Z_R + Z_0}
+  \label{eq:coef.refl}
+\end{equation}
+
+O de manera general, en términos de impedancias intrínsecas del medio, el coeficiente de reflexión de campo eléctrico
+($\Gamma_E$) entre dos medios dieléctricos depende de sus impedancias intrínsecas $\eta_1$ y $\eta_2$.
+
+Un objetivo central del presente trabajo práctico es la \textbf{determinación cualitativa de la impedancia
+característica ($Z_0$)}. Esto se logra por observación directa de la señal en la carga:
+
+\begin{itemize}
+  \item Si la línea está perfectamente adaptada ($Z_L = Z_0$), el coeficiente de reflexión es nulo ($\Gamma_R = 0$).
+  \item La \textbf{anulación de la distorsión de la señal} en la carga indica que la onda incidente es absorbida
+    completamente, lo que implica una adaptación perfecta ($Z_L=Z_0$), ya que no hay onda reflejada que cause distorsión
+\end{itemize}
+
+En la práctica, un desajuste de impedancias (donde $|\Gamma_R| > 0$) provoca
+\textbf{ondas estacionarias} en la línea, cuya severidad puede medirse por la \textbf{Relación de Onda Estacionaria
+(R.O.E.)}, que está directamente relacionada con el módulo del coeficiente de reflexión $|\Gamma|$.
+
+\section{Medición de Parámetros de Propagación}
+
+Los fenómenos observados en la propagación de la señal escalón permiten la medición de los parámetros esenciales que
+caracterizan el medio de enlace (línea coaxial).
+
+\subsection{Tiempo de Retardo ($t_r$) y Velocidad de Propagación ($V_p$)}
+
+El \textbf{tiempo de retardo ($t_r$)} mide el tiempo que requiere la onda para recorrer la longitud total ($\ell$) de la
+línea. Este parámetro está intrínsecamente ligado a la \textbf{velocidad de fase} de la onda en el medio
+de transmisión. La velocidad de propagación es fundamental para relacionar la longitud física de la línea con la
+longitud de onda ($\lambda$), ya que $T = \ell/v$.
+
+\subsection{Factor de Propagación ($F_p$)}
+
+El Factor de Propagación se define como la razón entre la velocidad de fase ($V_p$) en el medio y la velocidad de la luz
+en el vacío ($C$) ($F_p = V_p/C$). Este factor es inversamente proporcional al \textbf{Índice de Refracción
+($\eta$}) del medio, el cual relaciona la velocidad de la luz en el vacío ($c_0$) con la velocidad en el medio ($v$):
+$\eta = c_0/v$.
+
+\subsection{Atenuación ($A_t$) en Decibeles (dB)}
+
+La señal pierde energía a medida que se propaga a través de la línea debido a la resistencia del conductor ($R$) y la
+conductancia del aislante ($G$), lo que se engloba en la \textbf{constante de atenuación ($\alpha$)} de la línea.
+
+El objetivo de medir la \textbf{atenuación ($A_t$) en decibeles (dB)} es cuantificar la pérdida de potencia o voltaje a
+lo largo de la línea. Las pérdidas de transmisión pueden ser cuantificadas en decibeles.
+

@@ -4,7 +4,7 @@
     \item Generador de onda cuadrada ($f = 100KHz$, $V = 3Vpp$),
     \item Osciloscopio de doble trazo,
     \item Multimetro,
-    \item Cable coaxial $50 \Omega$,
+    \item Cable coaxial $75 \Omega$,
     \item Kit de medición de adaptación en lineas de transmisión.
   \end{itemize}
 
@@ -29,21 +29,32 @@
           \text{\textbf{CH1: }} 1\sfrac{V}{div} \quad V_{pp} = 2v \\
           \text{\textbf{CH2: }} 1\sfrac{V}{div} \quad V_{pp} = 2v
         \end{gather*}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=.8\textwidth]{pictures/stup.jpeg}
+          \caption{kit de medición de adaptación en lineas de transmisión usado.}
+        \end{figure}
       \item Graficar la forma de onda de los canales Ch1 y Ch2.
         \begin{figure}[!ht]
           \centering
-          %señales
+          \includegraphics[width=.8\textwidth]{pictures/osc_lin_orig.jpeg}
           \caption{señales capturadas en el osciloscopio con la linea adaptada.}
           \label{fig:sig_plot1}
         \end{figure}
       \item Interpretar lo obtenido.
+
+        En la figura \ref{fig:sig_plot1} se pueden apreciar los dos puntos de medición en el osciloscopio, siendo la
+        señal superior la medida en el punto A y la inferior en el punto B. A simple vista no se aprecia ninguna
+        alteración en la linea. Esto se debe a que la linea en si es relativamente corta, por lo que retardos de
+        propagación no son apreciables, y además la linea se encuentra prácticamente adaptada, con una carga de $Z_L =
+        75 \Omega$, que es la misma que la impedancia nominal de la linea de transmisión empleada.
       \item En el terminal B de la línea de transmisión, ubicar con la llave selectora de impedancia del kit, el
         potenciómetro ($Z_L$ = variable). Variar el potenciómetro desde cero al máximo. Encontrar la posición en que
         desaparecen las distorsiones, observando la señal a la salida del generador y en la carga.
         \begin{figure}[!ht]
           \centering
-          %señales
-          \caption{señal capturada sin distorsión para un $Z_L = *$.}
+          \includegraphics[width=.8\textwidth]{pictures/osc_lin_adap.jpg}
+          \caption{señal capturada sin distorsión para un $Z_L = 72 \Omega$. Escala de tiempo $\sfrac{1 \mu s}{div}$}
           \label{fig:sig_plot2}
         \end{figure}
         Mantener la posición obtenida por el potenciómetro. Cambiar el selector a la posición carga $Z_L = 75 \ \Omega$.
@@ -52,11 +63,18 @@
           R_{POT} = 72\Omega
         \end{equation*}
       \item Interpretar cualitativamente lo obtenido.
+
+        Habiendo reajustado la impedancia de la carga, y haciendo un aumento en la escala temporal y de voltaje, podemos
+        apreciar que la reflexión en la linea es prácticamente nula. Observando mas detenidamente la señal ubicada en la
+        parte inferior del osciloscopio, que seria el voltaje presente en la carga $V_L$, podemos ver que cerca de
+        llegar a estabilizarse, la señal presenta una pequeña curva. Esto puede ser porque la linea puede tener cierta
+        componente reactiva, la cual no es posible eliminar usando una carga puramente resistiva. Esto produce un muy
+        pequeño pero apreciable índice de reflexión, lo que causa esa curva antes de que la señal se estabilice.
       \item Con la línea adaptada ($Z_L = Z_O = 75 \ \Omega$), medir el tiempo de retardo ($T_r$) entre los puntos A y B.
         \begin{figure}[!ht]
           \centering
-          %señales
-          \caption{señal capturada midiendo el tiempo de retardo de propagación. Escala en $\sfrac{s}{div}$.}
+          \includegraphics[width=.8\textwidth]{pictures/osc_prop_del.jpeg}
+          \caption{señal capturada midiendo el tiempo de retardo de propagación. Escala en $\sfrac{50ns}{div}$.}
           \label{fig:sig_plot3}
         \end{figure}
         \begin{equation*}
@@ -81,6 +99,11 @@
             \end{equation*}
           \end{minipage}
         \end{figure}
+        \begin{figure}[!ht]
+          \centering
+          \includegraphics[width=.8\textwidth]{pictures/osc_att.jpg}
+          \caption{señal capturada midiendo la diferencia de voltaje en los puntos A y B.}
+        \end{figure}
       \item Calcular el factor de propagación ($F_p$) de la línea de transmisión por intermedio de la velocidad de
         propagación $V_p$.
         \begin{gather*}
@@ -97,19 +120,46 @@
       \item Graficar la forma de onda de los canales Ch1 y Ch2.
         \begin{figure}[!ht]
           \centering
-          %señales
-          \caption{señales capturadas por el osciloscopio.}
+          \includegraphics[width=.8\textwidth]{pictures/osc_lin_ca.jpeg}
+          \caption{señales capturadas por el osciloscopio con la linea en corto.}
           \label{fig:sig_plot4}
         \end{figure}
       \item Interpretar lo obtenido.
+
+        Al permanecer la linea en CA, no hubo cambios significativos de la señal de salida. Teóricamente, deberíamos
+        haber apreciado como la onda se reflejaba a si misma, cancelando el potencial del generador, y gradualmente
+        aumentando la tensión en la salida. Esto se debe a que cuando $Z_L = \infty$, si reemplazamos en la
+        ecuación \ref{eq:coef.refl} tendríamos:
+        \begin{align*}
+          \Gamma_R &= \frac{\infty - Z_0}{\infty + Z_0} \\
+          \Gamma_R &= \lim_{Z_L \to \infty} \frac{Z_L - Z_0}{Z_L + Z_0} \\
+          \Gamma_R &= 1
+        \end{align*}
+
+        Posiblemente no hayamos podido apreciar el efecto por la corta longitud de la onda y la resolución del
+        osciloscopio. También pudo haber sido problema del kit, ya que este nos genero bastantes problemas al momento de
+        manipularlo, generando falsos contactos y ruido indeseado.
       \item En el punto B de la línea de transmisión, ubicar la llave selectora de impedancia del kit en cortocircuito
-        (ZL = 0).  Observar las formas de onda en los puntos A y B.
+        ($Z_L = 0$).  Observar las formas de onda en los puntos A y B.
       \item Graficar la forma de onda de los canales Ch1 y Ch2.
         \begin{figure}[!ht]
           \centering
-          %señales
-          \caption{señales capturadas por el osciloscopio.}
+          \includegraphics[width=.8\textwidth]{pictures/osc_lin_cc.jpg}
+          \caption{señales capturadas por el osciloscopio con la linea abierta.}
           \label{fig:sig_plot5}
         \end{figure}
       \item Interpretar lo obtenido.
+
+        Al permanecer la linea en CC, podemos apreciar que el potencial en la carga es prácticamente nulo durante los
+        $360^\circ$ de la señal inyectada, solo presentando un pequeño pulso cuando se presentaba el flanco positivo del
+        generador, en ambos puntos A y B. Esto se debe a que toda la señal que transmite el generador, es reflejada con
+        la fase invertida, lo que provoca que se opongan entre si y anulen la totalidad del efecto. Considerando que 
+        $Z_L = 0$, si reemplazamos en la ecuación \ref{eq:coef.refl} tendríamos:
+        \begin{align*}
+          \Gamma_R &= \frac{0 - Z_0}{0 + Z_0} \\
+          \Gamma_R &= -1
+        \end{align*}
+
+        Si bien, no deberíamos haber visto nada en el osciloscopio, el pequeño pulso puede ser que se presente debido a
+        la velocidad de propagación de la onda, la cual es bastante baja como vimos en los cálculos previos.
     \end{enumerate}
