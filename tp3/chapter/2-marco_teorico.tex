@@ -1,1 +1,47 @@
-\chapter{Marco Teorico}
+\chapter{Marco Teórico: Adaptación con un Stub Simple}
+
+La teoría que sustenta este trabajo se basa en la propagación de ondas electromagnéticas y los principios de
+transferencia de energía en líneas de transmisión.
+
+\section{Fundamentos de la propagación y la reflexión}
+
+El flujo de potencia a lo largo de una línea se describe mediante el \textbf{Vector de Poynting}, que representa la
+densidad de energía transportada por la onda electromagnética.  Cuando la onda incidente encuentra una discontinuidad
+—una carga con impedancia $Z_L$ distinta de la impedancia característica $Z_0$—, una parte de la energía se refleja
+hacia el generador.  La superposición de las ondas incidente y reflejada da origen a una \textbf{onda estacionaria},
+cuyo análisis permite evaluar la eficiencia de la transmisión.
+
+\section{Cuantificación de la desadaptación}
+
+La desadaptación se cuantifica mediante dos parámetros esenciales:
+
+\begin{itemize} \item \textbf{Coeficiente de reflexión ($\Gamma$)}: mide la relación entre la onda reflejada y la
+  incidente. \[ \Gamma = \frac{Z_L - Z_0}{Z_L + Z_0} \quad\Rightarrow\quad |\Gamma| = \sqrt{\frac{P_r}{P_i}} \] \item
+  \textbf{Relación de Onda Estacionaria (ROE)}: expresa el grado de desadaptación y se calcula como: \[ ROE = \frac{1 +
+    |\Gamma|}{1 - |\Gamma|} \] Una ROE igual a 1 indica una línea perfectamente adaptada, sin potencia reflejada.
+\end{itemize}
+
+\section{Método de adaptación con \emph{stub}}
+
+La adaptación busca eliminar las reflexiones y lograr que la impedancia total vista por el generador sea igual a $Z_0$.
+Para ello se emplea un \emph{stub}, o ramal sintonizado, que consiste en un tramo corto de línea de transmisión
+conectado en paralelo a la línea principal y terminado en circuito abierto o cortocircuito.  
+
+La admitancia de un \emph{stub} es puramente imaginaria, lo que permite usarlo para cancelar la componente reactiva de
+la impedancia de carga.  El procedimiento consiste en identificar un punto de la línea donde la admitancia normalizada
+tenga parte real igual a 1 y parte imaginaria $jB_{residual}$.  El \emph{stub} se dimensiona con una susceptancia
+$jB_{stub} = -jB_{residual}$, logrando así una admitancia total unitaria ($1 + j0$) y, por ende, adaptación perfecta.
+
+\section{Aplicación práctica y uso del Ábaco de Smith}
+
+El \textbf{Ábaco de Smith} se utiliza como herramienta gráfica para representar impedancias y admitancias a lo largo de
+la línea.  Permite determinar visualmente la distancia desde la carga hasta el punto donde debe colocarse el \emph{stub}
+(d) y su longitud física ($L_s$), expresadas en longitudes de onda o en centímetros.  
+
+En el laboratorio, el procedimiento consiste en: \begin{enumerate} \item Medir las potencias incidente ($P_i$) y
+  reflejada ($P_r$) sin el \emph{stub}, para obtener la ROE inicial. \item Calcular los parámetros de adaptación ($d$ y
+  $L_s$) mediante el análisis teórico y el Ábaco de Smith. \item Conectar el \emph{stub} y repetir las mediciones. \item
+  Comparar la nueva ROE con la inicial, verificando la reducción de la potencia reflejada. \end{enumerate}
+
+  Cuando el sistema se encuentra correctamente adaptado, la ROE tiende a 1 y el coeficiente de reflexión a 0,
+  confirmando la máxima transferencia de potencia.
