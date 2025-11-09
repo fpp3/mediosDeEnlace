@@ -13,16 +13,94 @@
   \section{Actividades}
     \begin{enumerate}
       \item Conectar el generador a la frecuencia de trabajo $f = 410 MHz$.
+         Primero configuramos el generador a la frecuencia de trabajo especificada por la consigna.
+  
+         \begin{figure}[H]
+           \centering
+           \includegraphics[width=0.6\textwidth]{pictures/setup_gen.jpeg}
+           \caption{Generador UHF configurado en 410\,MHz.}
+           \label{fig:gen}
+         \end{figure}
+
       \item Con el vatímetro, verificar la potencia entregada por el transmisor (debe indicar LOW).
+
       \item Conectar la impedancia de carga $Z_L$ al vatímetro.
+        
+        Luego de verificar que la potencia entregada por el generador es 0\,W, conectamos la carga $Z_1$.
+  
+         \begin{figure}[H]
+           \centering
+           \begin{minipage}[b]{0.48\textwidth}
+             \centering
+             \includegraphics[width=\textwidth]{pictures/vatimetro_en_0.jpeg}
+             \caption{Lectura que confirma la ausencia de potencia en el vatímetro.}
+             \label{fig:vatimetro}
+           \end{minipage}
+           \hfill
+           \begin{minipage}[b]{0.48\textwidth}
+             \centering
+             \includegraphics[width=\textwidth]{pictures/Z1_conectada.jpeg}
+             \caption{Carga $Z_1$ conectada.}
+             \label{fig:z1}
+           \end{minipage}
+         \end{figure}
+
       \item Medir la potencia incidente $P_i$  y la potencia reflejada $P_r$.
         \begin{equation*}
           P_i = *W \quad P_r = *W
         \end{equation*}
+        
+        
+        Procedemos a medir potencia incidente y reflejada en la carga sin adaptación.
+  
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\textwidth]{pictures/Medicion sin adaptacion.jpeg}
+          \caption{Setup de medición de potencia en la carga sin adaptación.}
+          \label{fig:setup_sin_adapt}
+        \end{figure}
+  
+        \begin{figure}[H]
+          \centering
+          \begin{minipage}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{pictures/Potencia incidente sin adaptacion.jpeg}
+            \caption{Lectura de potencia incidente en la carga sin adaptación.}
+            \label{fig:pi_sin}
+          \end{minipage}
+          \hfill
+          \begin{minipage}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{pictures/potencia reflejada Sin adaptacion.jpeg}
+            \caption{Lectura de potencia reflejada en la carga sin adaptación.}
+            \label{fig:pr_sin}
+          \end{minipage}
+        \end{figure}
+  
+        En base a estas mediciones tenemos:
+        \[
+        P_i = 3.6\,\text{W} \quad\text{y}\quad P_r = 0.6\,\text{W}
+        \]
+
       \item Calcular el coeficiente de reflexión $\Gamma$ y la Relación de Onda Estacionaria ROE sin ningún stub (ss) conectado a la línea de transmisión.
         \begin{equation*}
           \Gamma_{ss} = * \quad ROE_{ss} = *
         \end{equation*}
+
+        A partir de los datos anteriores calculamos el coeficiente de reflexión y la relación de onda estacionaria (ROE) sin \emph{stub} conectado a la línea:
+  
+        \[
+        |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0.6}{3.6}} = 0.408
+        \]
+        \[
+        ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = \frac{1.408}{0.592} = 2.38
+        \]
+  
+        Por lo tanto:
+        \[
+        \boxed{|\Gamma_{ss}| = 0.41 \qquad ROE_{ss} = 2.38}
+        \]
+
       \item Comprobar en base a lo calculado en el ejercicio que el Stub y la distancia al Stub sean iguales.
       \item Conectar el adaptador BNC tipo T luego del vatímetro.
       \item Conectar la carga mediante el segmento de línea calculado y en el extremo libre, conectar el stub adecuado.
@@ -30,135 +108,62 @@
         \begin{equation*}
           P_i = *W \quad P_r = *W
         \end{equation*}
+
+        Luego, con un conector BNC en T, adaptamos la línea de transmisión mediante un \emph{stub} en circuito abierto.
+  
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.6\textwidth]{pictures/Linea adaptada.jpeg}
+          \caption{Línea adaptada con \emph{stub} en circuito abierto.}
+          \label{fig:linea_adaptada}
+        \end{figure}
+  
+        \begin{figure}[H]
+          \centering
+          \begin{minipage}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{pictures/potencia incidente con adaptacion.jpeg}
+            \caption{Lectura de potencia incidente en la carga con adaptación.}
+            \label{fig:pi_con}
+          \end{minipage}
+          \hfill
+          \begin{minipage}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{pictures/potencia reflejada con adaptacion.jpeg}
+            \caption{Lectura de potencia reflejada en la carga con adaptación.}
+            \label{fig:pr_con}
+          \end{minipage}
+        \end{figure}
+  
+        En base a estas mediciones tenemos:
       \item Calcular el coeficiente de reflexión $\Gamma$ y la Relación de Onda Estacionaria ROE con el stub (cs) conectado a la línea de transmisión.
         \begin{equation*}
         \Gamma_{cs} = * \quad ROE_{cs} = *
         \end{equation*}
-    \end{enumerate}  
-
-
-    Primero configuramos el generador a la frecuencia de trabajo especificada por la consigna.
   
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.6\textwidth]{pictures/setup_gen.jpeg}
-      \caption{Generador UHF configurado en 410\,MHz.}
-      \label{fig:gen}
-    \end{figure}
+        \[
+        P_i = 4\,\text{W} \quad\text{y}\quad P_r = 0\,\text{W}
+        \]
+      
+        El coeficiente de reflexión resulta:
+        \[
+        |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0}{4}} = 0
+        \]
+      
+        Luego, la Relación de Onda Estacionaria (ROE) es:
+        \[
+        ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = 1
+        \]
+      
+        Por lo tanto:
+        \[
+        \boxed{|\Gamma_{ss}| = 0 \qquad ROE_{ss} = 1}
+        \]
+      
+        \noindent
+        Esto indica una adaptación perfecta de la línea, sin potencia reflejada.
   
-   Luego de verificar que la potencia entregada por el generador es 0\,W, conectamos la carga $Z_1$.
-  
-    \begin{figure}[H]
-      \centering
-      \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/vatimetro_en_0.jpeg}
-        \caption{Lectura que confirma la ausencia de potencia en el vatímetro.}
-        \label{fig:vatimetro}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/Z1_conectada.jpeg}
-        \caption{Carga $Z_1$ conectada.}
-        \label{fig:z1}
-      \end{minipage}
-    \end{figure}
-  
-    Procedemos a medir potencia incidente y reflejada en la carga sin adaptación.
-  
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.6\textwidth]{pictures/Medicion sin adaptacion.jpeg}
-      \caption{Setup de medición de potencia en la carga sin adaptación.}
-      \label{fig:setup_sin_adapt}
-    \end{figure}
-  
-    \begin{figure}[H]
-      \centering
-      \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/Potencia incidente sin adaptacion.jpeg}
-        \caption{Lectura de potencia incidente en la carga sin adaptación.}
-        \label{fig:pi_sin}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/potencia reflejada Sin adaptacion.jpeg}
-        \caption{Lectura de potencia reflejada en la carga sin adaptación.}
-        \label{fig:pr_sin}
-      \end{minipage}
-    \end{figure}
-  
-    En base a estas mediciones tenemos:
-    \[
-    P_i = 3.6\,\text{W} \quad\text{y}\quad P_r = 0.6\,\text{W}
-    \]
-  
-    A partir de los datos anteriores calculamos el coeficiente de reflexión y la relación de onda estacionaria (ROE) sin \emph{stub} conectado a la línea:
-  
-    \[
-    |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0.6}{3.6}} = 0.408
-    \]
-    \[
-    ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = \frac{1.408}{0.592} = 2.38
-    \]
-  
-    Por lo tanto:
-    \[
-    \boxed{|\Gamma_{ss}| = 0.41 \qquad ROE_{ss} = 2.38}
-    \]
-  
-    Luego, con un conector BNC en T, adaptamos la línea de transmisión mediante un \emph{stub} en circuito abierto.
-  
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.6\textwidth]{pictures/Linea adaptada.jpeg}
-      \caption{Línea adaptada con \emph{stub} en circuito abierto.}
-      \label{fig:linea_adaptada}
-    \end{figure}
-  
-    \begin{figure}[H]
-      \centering
-      \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/potencia incidente con adaptacion.jpeg}
-        \caption{Lectura de potencia incidente en la carga con adaptación.}
-        \label{fig:pi_con}
-      \end{minipage}
-      \hfill
-      \begin{minipage}[b]{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{pictures/potencia reflejada con adaptacion.jpeg}
-        \caption{Lectura de potencia reflejada en la carga con adaptación.}
-        \label{fig:pr_con}
-      \end{minipage}
-    \end{figure}
-  
-    En base a estas mediciones tenemos:
-    \[
-    P_i = 4\,\text{W} \quad\text{y}\quad P_r = 0\,\text{W}
-    \]
-  
-    El coeficiente de reflexión resulta:
-    \[
-    |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0}{4}} = 0
-    \]
-  
-    Luego, la Relación de Onda Estacionaria (ROE) es:
-    \[
-    ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = 1
-    \]
-  
-    Por lo tanto:
-    \[
-    \boxed{|\Gamma_{ss}| = 0 \qquad ROE_{ss} = 1}
-    \]
-  
-    \noindent
-    Esto indica una adaptación perfecta de la línea, sin potencia reflejada.
-  
+       \end{enumerate}  
  
 
 
