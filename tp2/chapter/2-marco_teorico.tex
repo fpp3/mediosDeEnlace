@@ -2,43 +2,60 @@
 
 \section{Cálculo de la Relación de Onda Estacionaria (ROE) en Líneas de Transmisión}
 
-Para este trabajo práctico necesitamos entender la Relación de Onda Estacionaria (ROE), un parámetro fundamental en sistemas de radiofrecuencia que nos permite evaluar qué tan bien está adaptada una antena al transmisor. Este concepto se basa en la propagación de ondas electromagnéticas en líneas de transmisión y el fenómeno de reflexión que ocurre cuando hay desadaptación.
+Para este trabajo práctico necesitamos entender la Relación de Onda Estacionaria (ROE), un parámetro fundamental en
+sistemas de radiofrecuencia que nos permite evaluar qué tan bien está adaptada una antena al transmisor. Este concepto
+se basa en la propagación de ondas electromagnéticas en líneas de transmisión y el fenómeno de reflexión que ocurre
+cuando hay desadaptación.
 
 \subsection{Fundamentos de Campos y Ondas Electromagnéticas}
 
-El marco teórico que utilizamos parte de los conceptos vistos en la materia sobre campos electromagnéticos y medios de enlace entre transmisor y receptor. Las Ecuaciones de Maxwell forman la base de toda la teoría, permitiéndonos entender cómo se comportan los campos eléctrico y magnético en diferentes situaciones.
+El marco teórico que utilizamos parte de los conceptos vistos en la materia sobre campos electromagnéticos y medios de
+enlace entre transmisor y receptor. Las Ecuaciones de Maxwell forman la base de toda la teoría, permitiéndonos entender
+cómo se comportan los campos eléctrico y magnético en diferentes situaciones.
 
-De estas ecuaciones se deriva la Ecuación de Onda Electromagnética, que describe cómo una perturbación en un punto del espacio se reproduce en otros lugares después de cierto tiempo. Este retardo temporal es proporcional a la distancia recorrida.
+De estas ecuaciones se deriva la Ecuación de Onda Electromagnética, que describe cómo una perturbación en un punto del
+espacio se reproduce en otros lugares después de cierto tiempo. Este retardo temporal es proporcional a la distancia
+recorrida.
 
-El flujo de energía de una onda electromagnética se describe mediante el Vector de Poynting, que es perpendicular tanto al campo eléctrico (\(E\)) como al magnético (\(H\)). Este vector representa la velocidad con que fluye la energía o potencia. En nuestro experimento, cuando medimos la potencia incidente (\(P_i\)) y la potencia reflejada (\(P_r\)) con el vatímetro, estamos midiendo justamente este flujo de potencia transportado por la onda.
+El flujo de energía de una onda electromagnética se describe mediante el Vector de Poynting, que es perpendicular tanto
+al campo eléctrico (\(E\)) como al magnético (\(H\)). Este vector representa la velocidad con que fluye la energía o
+potencia. En nuestro experimento, cuando medimos la potencia incidente (\(P_i\)) y la potencia reflejada (\(P_r\)) con
+el vatímetro, estamos midiendo justamente este flujo de potencia transportado por la onda.
 
 \subsection{Reflexión y Coeficiente de Reflexión}
 
-Cuando una onda electromagnética viaja por una línea de transmisión, transporta energía. Si encuentra un cambio en las características del medio (por ejemplo, cuando llega a la antena), parte de esa energía se transmite y otra parte se refleja de vuelta.
+Cuando una onda electromagnética viaja por una línea de transmisión, transporta energía. Si encuentra un cambio en las
+características del medio (por ejemplo, cuando llega a la antena), parte de esa energía se transmite y otra parte se
+refleja de vuelta.
 
 Estudiamos principalmente dos tipos de reflexión:
 
 \begin{enumerate}
-    \item \textbf{Reflexión Normal:} Cuando la onda incide perpendicularmente sobre la superficie (por ejemplo, entre dos dieléctricos o entre un dieléctrico y un conductor).
+    \item \textbf{Reflexión Normal:} Cuando la onda incide perpendicularmente sobre la superficie (por ejemplo, entre
+        dos dieléctricos o entre un dieléctrico y un conductor).
     \item \textbf{Reflexión Oblicua:} Cuando la onda incide en ángulo.
 \end{enumerate}
 
 El parámetro que cuantifica cuánta energía se refleja es el Coeficiente de Reflexión (\(\Gamma\)):
 
 \begin{itemize}
-    \item En líneas de transmisión, este coeficiente depende de la impedancia de la carga (\(Z_L\)) y la impedancia característica de la línea (\(Z_0\)).
+    \item En líneas de transmisión, este coeficiente depende de la impedancia de la carga (\(Z_L\)) y la impedancia
+        característica de la línea (\(Z_0\)).
     \item El coeficiente \(\Gamma\) es un número complejo (tiene módulo y fase).
     \item Si la línea está perfectamente adaptada (\(Z_L = Z_0\)), entonces \(\Gamma = 0\) (no hay reflexión).
     \item Si la carga está en circuito abierto, \(\Gamma = +1\), y si está en cortocircuito, \(\Gamma = -1\).
 \end{itemize}
 
-En nuestro trabajo práctico, el coeficiente de reflexión lo calculamos a partir de las potencias que medimos con el vatímetro BIRD Thruline 43, que nos permite leer tanto la potencia incidente (\(P_i\)) como la reflejada (\(P_r\)).
+En nuestro trabajo práctico, el coeficiente de reflexión lo calculamos a partir de las potencias que medimos con el
+vatímetro BIRD Thruline 43, que nos permite leer tanto la potencia incidente (\(P_i\)) como la reflejada (\(P_r\)).
 
 \subsection{La Relación de Onda Estacionaria (ROE)}
 
-Cuando hay una onda reflejada que viaja en sentido contrario a la onda incidente, ambas ondas se superponen formando lo que llamamos una onda estacionaria. Este fenómeno da lugar a puntos de máxima y mínima amplitud a lo largo de la línea.
+Cuando hay una onda reflejada que viaja en sentido contrario a la onda incidente, ambas ondas se superponen formando lo
+que llamamos una onda estacionaria. Este fenómeno da lugar a puntos de máxima y mínima amplitud a lo largo de la línea.
 
-La Relación de Onda Estacionaria (ROE) se define como la relación entre la amplitud máxima y mínima de esta onda estacionaria, y se calcula a partir del módulo del coeficiente de reflexión \(|\Gamma|\):
+La Relación de Onda Estacionaria (ROE) se define como la relación entre la amplitud máxima y mínima de esta onda
+estacionaria, y se calcula a partir del módulo del coeficiente de reflexión \(|\Gamma|\):
 
 \begin{equation}
     ROE = \frac{1 + |\Gamma|}{1 - |\Gamma|}
@@ -47,21 +64,21 @@ La Relación de Onda Estacionaria (ROE) se define como la relación entre la amp
 \subsubsection{Características y Significado de la ROE:}
 
 \begin{itemize}
-    \item \textbf{Rango de Valores:} La ROE siempre es un número positivo mayor o igual a 1 (\(1 \leq ROE \leq \infty\)).
+    \item \textbf{Rango de Valores:} La ROE siempre es un número positivo mayor o igual a 1 (\(1 \leq ROE \leq
+        \infty\)).
     \item \textbf{Adaptación:} La ROE nos indica qué tan bien está adaptada la carga:
     \begin{itemize}
-        \item \(ROE = 1\) significa adaptación perfecta. Toda la potencia se transmite a la antena, nada se refleja (\(\Gamma = 0\)).
-        \item \(ROE > 1\) indica que hay reflexión. Parte de la energía vuelve al transmisor en lugar de radiarse por la antena.
+        \item \(ROE = 1\) significa adaptación perfecta. Toda la potencia se transmite a la antena, nada se refleja
+            (\(\Gamma = 0\)).
+        \item \(ROE > 1\) indica que hay reflexión. Parte de la energía vuelve al transmisor en lugar de radiarse por la
+            antena.
     \end{itemize}
-    \item \textbf{Objetivo del TP:} En nuestro experimento medimos \(P_i\) y \(P_r\) para diferentes longitudes de antenas (radiantes) operando a 450 MHz. Con estos datos calculamos la ROE de cada una para determinar cuál tiene mejor adaptación al sistema.
+    \item \textbf{Objetivo del TP:} En nuestro experimento medimos \(P_i\) y \(P_r\) para diferentes longitudes de
+        antenas (radiantes) operando a 450 MHz. Con estos datos calculamos la ROE de cada una para determinar cuál tiene
+        mejor adaptación al sistema.
 \end{itemize}
 
-\vspace{0.5cm}
-
-\noindent\rule{\textwidth}{0.4pt}
-
-\vspace{0.3cm}
-
-En resumen, este trabajo práctico aplica la teoría de reflexión en líneas de transmisión usando mediciones reales de potencia para calcular la ROE, que es el parámetro clave para evaluar la adaptación en radiofrecuencia.
+En resumen, este trabajo práctico aplica la teoría de reflexión en líneas de transmisión usando mediciones reales de
+potencia para calcular la ROE, que es el parámetro clave para evaluar la adaptación en radiofrecuencia.
 
 

@@ -10,90 +10,73 @@
 
   \section{Actividades}
     \begin{enumerate}
-      \item \begin{minipage}[t]{\linewidth}
-        Verificar los datos del transmisor y vatímetro a fin de evitar daños a los instrumentos. Verificar estado de fuentes de alimentación del transmisor.
-        
-        \begin{center}
+      \item Verificar los datos del transmisor y vatímetro a fin de evitar daños a los instrumentos. Verificar estado de fuentes de alimentación del transmisor.
+        \begin{figure}[!ht]
+          \centering
           \includegraphics[width=0.28\textwidth]{img/conexion_inicial.jpeg}
-          \captionof{figure}{Conexión inicial del equipamiento.}
+          \caption{conexión inicial del equipamiento.}
           \label{fig:conexion_inicial}
-        \end{center}
-        \end{minipage}
-      \item \begin{minipage}[t]{\linewidth}
-        Seleccionar el acoplador para una potencia de 10 W y una frecuencia de 200 a 500 MHz.
-        
-        \begin{center}
+        \end{figure}
+      \item Seleccionar el acoplador para una potencia de 10 W y una frecuencia de 200 a 500 MHz.
+        \begin{figure}[H]
+          \centering
           \includegraphics[width=0.28\textwidth]{img/vatimetro_10w.png}
-          \captionof{figure}{Vatímetro configurado para 10W.}
+          \caption{vatímetro configurado para 10W.}
           \label{fig:vatimetro_10w}
-        \end{center}
-        \end{minipage}
+        \end{figure}
       \item Se posee 4 irradiantes (31.70 cm, 17 cm, 16 cm y 13,5 cm) colocar uno de los irradiantes en la base magnética.
       \item No encender los transmisores antes de hacer las conexiones de los elementos.
-      \item \begin{minipage}[t]{\linewidth}
-        Conectar mediante cable coaxial el vatímetro entre el transmisor y la antena.
-        
-        \begin{center}
-          \includegraphics[width=0.28\textwidth]{img/Conexion_vatimetro.jpeg}
-          \captionof{figure}{Conexión del vatímetro entre transmisor y antena.}
-          \label{fig:conexion_vatimetro}
-        \end{center}
-        \end{minipage}
-      \item \begin{minipage}[t]{\linewidth}
-        Ajustar la frecuencia de transmisor a: 450 MHz.
-        
-        \begin{center}
-          \includegraphics[width=0.28\textwidth]{img/frecuencia.png}
-          \captionof{figure}{Ajuste de frecuencia a 450 MHz.}
-          \label{fig:frecuencia}
-        \end{center}
-        \end{minipage}
-      \item Configurar el medidor para medición de potencia incidente como lo indica figura \ref{fig:power_meas.forward}.
+      \item Conectar mediante cable coaxial el vatímetro entre el transmisor y la antena.
         \begin{figure}[!ht]
+          \centering
+          \includegraphics[width=0.28\textwidth]{img/Conexion_vatimetro.jpeg}
+          \caption{conexión del vatímetro entre transmisor y antena.}
+          \label{fig:conexion_vatimetro}
+        \end{figure}
+      \item Ajustar la frecuencia de transmisor a: 450 MHz.
+        \begin{figure}[!ht]
+          \centering
+          \includegraphics[width=0.28\textwidth]{img/frecuencia.png}
+          \caption{ajuste de frecuencia a 450 MHz.}
+          \label{fig:frecuencia}
+        \end{figure}
+      \item Configurar el medidor para medición de potencia incidente como lo indica figura \ref{fig:power_meas.forward}.
+        \begin{figure}[H]
           \centering
           \input{tikz/f_p_meas.tikz}
           \caption{disposición para medición de potencia incidente.}
           \label{fig:power_meas.forward}
         \end{figure}
-      \item \begin{minipage}[t]{\linewidth}
+      \item 
         Encender el medidor y el transmisor. Pulsar el botón de transmisión y verificar que el sistema está transmitiendo.
-        
-        \begin{center}
+        \begin{figure}[!ht]
+          \centering
           \includegraphics[width=0.8\textwidth]{img/Prueba_transm.jpeg}
-          \captionof{figure}{Prueba de transmisión del sistema.}
+          \caption{prueba de transmisión del sistema.}
           \label{fig:prueba_transm}
-        \end{center}
-        \end{minipage}
+        \end{figure}
       \item Realizar la medición pulsando momentáneamente el botón de transmisión.
-        \begin{equation*}
-          P_i = *W
-        \end{equation*}
-        \begin{itemize}
-          \item p/10 cm \quad Valor de la \( P_i \) (W) = 3.2
-          \item p/13,7 cm \quad Valor de la \( P_i \) (W) = 2
-          \item p/17 cm \quad Valor de la \( P_i \) (W) = 2
-          \item p/32 cm \quad Valor de la \( P_i \) (W) = 0.6
-        \end{itemize}
-      \item \begin{minipage}[t]{\linewidth}
-        Apagar el transmisor y configurar el vatímetro para medición de onda reflejada como lo indica figura
+        \begin{align*}
+          &l_i = 10cm, \quad &P_i = 3.2W\\
+          &l_i = 13.7cm, \quad &P_i = 2W\\
+          &l_i = 17cm, \quad &P_i = 2W\\
+          &l_i = 32cm, \quad &P_i = 0.6W
+        \end{align*}
+      \item Apagar el transmisor y configurar el vatímetro para medición de onda reflejada como lo indica figura
         \ref{fig:power_meas.reverse}.
-        
-        \begin{center}
+        \begin{figure}[!ht]
+          \centering
           \input{tikz/r_p_meas.tikz}
-          \captionof{figure}{disposición para medición de potencia reflejada.}
+          \caption{disposición para medición de potencia reflejada.}
           \label{fig:power_meas.reverse}
-        \end{center}
-        \end{minipage}
+        \end{figure}
       \item Encender el transmisor y realizar la medición pulsando momentáneamente el botón de transmisión.
-        \begin{equation*}
-          P_r = *W
-        \end{equation*}
-        \begin{itemize}
-          \item p/10 cm \quad Valor de la \( P_r \) (W) = 0.2
-          \item p/13,7 cm \quad Valor de la \( P_r \) (W) = 0.3
-          \item p/17 cm \quad Valor de la \( P_r \) (W) = 0.54
-          \item p/32 cm \quad Valor de la \( P_r \) (W) = 2.4
-        \end{itemize}
+        \begin{align*}
+          &l_i = 10cm, \quad &P_r = 0.2W\\
+          &l_i = 13.7cm, \quad &P_r = 0.3W\\
+          &l_i = 17cm, \quad &P_r = 0.54W\\
+          &l_i = 32cm, \quad &P_r = 2.4W
+        \end{align*}
       \item Calcular el valor del ROE para cada uno de los irradiantes (31.70 cm, 17 cm, 16 cm y 13,5 cm.) por medio de
         su ecuación.
 
@@ -115,15 +98,12 @@
         \end{equation}
 
         reemplazando los valores obtenidos, nos queda:
-        \begin{equation*}
-          ROE = *
-        \end{equation*}
-        \begin{itemize}
-          \item p/10 cm \quad ROE = 1.6667
-          \item p/13,7 cm \quad ROE = 2.2642
-          \item p/17 cm \quad ROE = 3.1633
-          \item p/32 cm \quad ROE = 3
-        \end{itemize}
+        \begin{align*}
+          &l_i = 10cm, \quad &ROE = 1.6667\\
+          &l_i = 13.7cm, \quad &ROE = 2.2642\\
+          &l_i = 17cm, \quad &ROE = 3.1663\\
+          &l_i = 32cm, \quad &ROE = 3\\
+        \end{align*}
       \item Determinar cual de los irradiantes posee un menor ROE
       
         El elemento radiante de menor ROE es el que mide 10cm de longitud.
