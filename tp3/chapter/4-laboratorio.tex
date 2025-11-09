@@ -13,9 +13,7 @@
   \section{Actividades}
     \begin{enumerate}
       \item Conectar el generador a la frecuencia de trabajo $f = 410 MHz$.
-         Primero configuramos el generador a la frecuencia de trabajo especificada por la consigna.
-  
-         \begin{figure}[H]
+         \begin{figure}[!ht]
            \centering
            \includegraphics[width=0.6\textwidth]{pictures/setup_gen.jpeg}
            \caption{Generador UHF configurado en 410\,MHz.}
@@ -25,19 +23,16 @@
       \item Con el vatímetro, verificar la potencia entregada por el transmisor (debe indicar LOW).
 
       \item Conectar la impedancia de carga $Z_L$ al vatímetro.
-        
-        Luego de verificar que la potencia entregada por el generador es 0\,W, conectamos la carga $Z_1$.
-  
-         \begin{figure}[H]
+         \begin{figure}[!ht]
            \centering
-           \begin{minipage}[b]{0.48\textwidth}
+           \begin{minipage}[]{0.48\textwidth}
              \centering
              \includegraphics[width=\textwidth]{pictures/vatimetro_en_0.jpeg}
              \caption{Lectura que confirma la ausencia de potencia en el vatímetro.}
              \label{fig:vatimetro}
            \end{minipage}
            \hfill
-           \begin{minipage}[b]{0.48\textwidth}
+           \begin{minipage}[]{0.48\textwidth}
              \centering
              \includegraphics[width=\textwidth]{pictures/Z1_conectada.jpeg}
              \caption{Carga $Z_1$ conectada.}
@@ -47,13 +42,9 @@
 
       \item Medir la potencia incidente $P_i$  y la potencia reflejada $P_r$.
         \begin{equation*}
-          P_i = *W \quad P_r = *W
+          P_i = 3.6W \quad P_r = 0.6W
         \end{equation*}
-        
-        
-        Procedemos a medir potencia incidente y reflejada en la carga sin adaptación.
-  
-        \begin{figure}[H]
+        \begin{figure}[!ht]
           \centering
           \includegraphics[width=0.6\textwidth]{pictures/Medicion sin adaptacion.jpeg}
           \caption{Setup de medición de potencia en la carga sin adaptación.}
@@ -76,49 +67,37 @@
             \label{fig:pr_sin}
           \end{minipage}
         \end{figure}
-  
-        En base a estas mediciones tenemos:
-        \[
-        P_i = 3.6\,\text{W} \quad\text{y}\quad P_r = 0.6\,\text{W}
-        \]
 
-      \item Calcular el coeficiente de reflexión $\Gamma$ y la Relación de Onda Estacionaria ROE sin ningún stub (ss) conectado a la línea de transmisión.
-        \begin{equation*}
-          \Gamma_{ss} = * \quad ROE_{ss} = *
-        \end{equation*}
+      \item Calcular el coeficiente de reflexión $\Gamma$ y la Relación de Onda Estacionaria ROE sin ningún stub (ss)
+        conectado a la línea de transmisión.
 
-        A partir de los datos anteriores calculamos el coeficiente de reflexión y la relación de onda estacionaria (ROE) sin \emph{stub} conectado a la línea:
-  
-        \[
-        |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0.6}{3.6}} = 0.408
-        \]
-        \[
-        ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = \frac{1.408}{0.592} = 2.38
-        \]
-  
+        A partir de los datos anteriores calculamos el coeficiente de reflexión y la relación de onda estacionaria (ROE)
+        sin \emph{stub} conectado a la línea:
+        \begin{gather*}
+          |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0.6}{3.6}} = 0.408 \\
+          ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = \frac{1.408}{0.592} = 2.38
+        \end{gather*}
+
         Por lo tanto:
-        \[
-        \boxed{|\Gamma_{ss}| = 0.41 \qquad ROE_{ss} = 2.38}
-        \]
+        \begin{equation*}
+          \Gamma_{ss} = 0.41 \quad ROE_{ss} = 2.38
+        \end{equation*}
 
       \item Comprobar en base a lo calculado en el ejercicio que el Stub y la distancia al Stub sean iguales.
       \item Conectar el adaptador BNC tipo T luego del vatímetro.
       \item Conectar la carga mediante el segmento de línea calculado y en el extremo libre, conectar el stub adecuado.
-      \item Medir la potencia incidente $P_i$  y la potencia reflejada $P_r$.
-        \begin{equation*}
-          P_i = *W \quad P_r = *W
-        \end{equation*}
-
-        Luego, con un conector BNC en T, adaptamos la línea de transmisión mediante un \emph{stub} en circuito abierto.
-  
-        \begin{figure}[H]
+        \begin{figure}[!ht]
           \centering
           \includegraphics[width=0.6\textwidth]{pictures/Linea adaptada.jpeg}
           \caption{Línea adaptada con \emph{stub} en circuito abierto.}
           \label{fig:linea_adaptada}
         \end{figure}
+      \item Medir la potencia incidente $P_i$  y la potencia reflejada $P_r$.
+        \begin{equation*}
+          P_i = 4W \quad P_r = 0W
+        \end{equation*}
   
-        \begin{figure}[H]
+        \begin{figure}[!ht]
           \centering
           \begin{minipage}[b]{0.48\textwidth}
             \centering
@@ -134,59 +113,50 @@
             \label{fig:pr_con}
           \end{minipage}
         \end{figure}
-  
-        En base a estas mediciones tenemos:
+
       \item Calcular el coeficiente de reflexión $\Gamma$ y la Relación de Onda Estacionaria ROE con el stub (cs) conectado a la línea de transmisión.
-        \begin{equation*}
-        \Gamma_{cs} = * \quad ROE_{cs} = *
-        \end{equation*}
-  
-        \[
-        P_i = 4\,\text{W} \quad\text{y}\quad P_r = 0\,\text{W}
-        \]
-      
+
         El coeficiente de reflexión resulta:
         \[
-        |\Gamma_{ss}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0}{4}} = 0
+        |\Gamma_{cs}| = \sqrt{\frac{P_r}{P_i}} = \sqrt{\frac{0}{4}} = 0
         \]
-      
+
         Luego, la Relación de Onda Estacionaria (ROE) es:
         \[
-        ROE_{ss} = \frac{1 + |\Gamma_{ss}|}{1 - |\Gamma_{ss}|} = 1
+        ROE_{cs} = \frac{1 + |\Gamma_{cs}|}{1 - |\Gamma_{cs}|} = 1
         \]
-      
-        Por lo tanto:
-        \[
-        \boxed{|\Gamma_{ss}| = 0 \qquad ROE_{ss} = 1}
-        \]
-      
-        \noindent
-        Esto indica una adaptación perfecta de la línea, sin potencia reflejada.
-  
-       \end{enumerate}  
- 
 
+        Por lo tanto:
+        \begin{equation*}
+        \Gamma_{cs} = 0 \quad ROE_{cs} = 1
+        \end{equation*}
+
+        Esto indica una adaptación perfecta de la línea, sin potencia reflejada.
+    \end{enumerate}
 
   \section{Cuestionario}
   
   \begin{enumerate}
     \item \textbf{¿Qué implica que la línea de transmisión esté adaptada?}
-  
-    Implica que la impedancia característica de la línea es igual a la impedancia de carga, es decir, $Z_L = Z_0$.  
-    En esa condición no se produce reflexión de potencia, el coeficiente de reflexión es nulo $(|\Gamma|=0)$ y toda la energía entregada por el generador se transfiere a la carga.  
-    Como consecuencia, la Relación de Onda Estacionaria (ROE) es igual a 1, indicando una transmisión ideal sin ondas estacionarias.
-  
+
+      Implica que la impedancia característica de la línea es igual a la impedancia de carga, es decir, $Z_L = Z_0$.  En
+      esa condición no se produce reflexión de potencia, el coeficiente de reflexión es nulo $(|\Gamma|=0)$ y toda la
+      energía entregada por el generador se transfiere a la carga.  Como consecuencia, la Relación de Onda Estacionaria
+      (ROE) es igual a 1, indicando una transmisión ideal sin ondas estacionarias.
+
     \item \textbf{¿Qué conclusión se obtiene con las mediciones de solamente la carga y después con la introducción de un \emph{stub}?}
-  
-    Al medir únicamente con la carga, se observa cierta potencia reflejada, lo que evidencia desadaptación entre la línea y la carga.  
-    Luego, al conectar el \emph{stub} en la posición adecuada, éste compensa la reactancia presente y corrige la desadaptación, reduciendo el coeficiente de reflexión a cero.  
-    De esta forma, el sistema alcanza una condición de adaptación perfecta, donde la potencia reflejada desaparece y la ROE se reduce a 1.
-  
+      Al medir únicamente con la carga, se observa cierta potencia reflejada, lo que evidencia desadaptación entre la
+      línea y la carga.  Luego, al conectar el \emph{stub} en la posición adecuada, éste compensa la reactancia presente
+      y corrige la desadaptación, reduciendo el coeficiente de reflexión a cero.  De esta forma, el sistema alcanza una
+      condición de adaptación perfecta, donde la potencia reflejada desaparece y la ROE se reduce a 1.
+
     \item \textbf{¿Qué función tiene la carga utilizada?}
-  
-    La carga representa la impedancia que debe absorber la potencia proveniente del generador a través de la línea.  
-    Su función es transformar la energía entregada en calor o trabajo útil, dependiendo del tipo de carga, y permitir el análisis de cómo las reflexiones y las adaptaciones afectan la transferencia de potencia.  
-    En este experimento, se usa principalmente como elemento de referencia para evaluar la eficiencia de la adaptación mediante el \emph{stub}.
+
+      La carga representa la impedancia que debe absorber la potencia proveniente del generador a través de la línea.
+      Su función es transformar la energía entregada en calor o trabajo útil, dependiendo del tipo de carga, y permitir
+      el análisis de cómo las reflexiones y las adaptaciones afectan la transferencia de potencia.  En este experimento,
+      se usa principalmente como elemento de referencia para evaluar la eficiencia de la adaptación mediante el
+      \emph{stub}.
   \end{enumerate}
 
     
